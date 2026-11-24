@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "Arduino Non-Blocking Drill",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-photoresistor-sensor", "id": "ldr1", "top": -70, "left": 250, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 90, "left": 270, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 90, "left": 190, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "ldr1:VCC", "uno:5V", "red", [] ],
+    [ "ldr1:GND", "uno:GND.1", "black", [] ],
+    [ "ldr1:AO", "uno:A0", "green", [] ],
+    [ "uno:9", "r1:1", "green", [] ],
+    [ "r1:2", "led1:A", "green", [] ],
+    [ "led1:C", "uno:GND.2", "black", [] ]
+  ],
+  "dependencies": {}
+}
